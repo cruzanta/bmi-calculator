@@ -47,8 +47,8 @@ std::string roundedDoubleStr(double num)
 
 void displayBodyMassIndexReport(double height, double weight)
 {
-    // Declare an integer variable to hold the width of the entire table
-    int tableWid;
+    // Initialize an integer variable to hold the width of the entire table
+    int tableWid = 0;
     // Initialize an array to hold the widths of each non-header row's columns
     long unsigned int colWids[] = {1, 25, 2, 25, 1};
     // Initialize the strings to be displayed in the table
