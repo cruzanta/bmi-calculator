@@ -17,3 +17,7 @@ To download, build, install, and run:
     cmake .
     make
     ./bin/BMIcalculator
+
+## Demo
+
+![Demo](https://github.com/cruzanta/bmi-calculator/blob/master/bmicalculator_demo_04092018.gif?raw=true)
