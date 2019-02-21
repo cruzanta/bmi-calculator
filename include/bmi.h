@@ -9,4 +9,4 @@ std::string assignWeightCategory(double height, double weight);
 std::string roundedDoubleStr(double num);
 void displayBodyMassIndexReport(double height, double weight);
 
-#endif
+#endif // BMI_H

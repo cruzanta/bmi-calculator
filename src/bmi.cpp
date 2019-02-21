@@ -40,6 +40,7 @@ std::string assignWeightCategory(double height, double weight)
 std::string roundedDoubleStr(double num)
 {
     std::stringstream stream;
+
     stream << std::fixed << std::setprecision(2) << num;
 
     return stream.str();
@@ -47,17 +48,14 @@ std::string roundedDoubleStr(double num)
 
 void displayBodyMassIndexReport(double height, double weight)
 {
-    // Initialize an integer variable to hold the width of the entire table
     int tableWid = 0;
-    // Initialize an array to hold the widths of each non-header row's columns
     long unsigned int colWids[] = {1, 25, 2, 25, 1};
-    // Initialize the strings to be displayed in the table
     std::string headerRowStr = "Body Mass Index (BMI) Report";
     std::string bmi = roundedDoubleStr(calculateBMI(height, weight));
     std::string category = assignWeightCategory(height, weight);
     std::string lowWeight = roundedDoubleStr(calculateLowNormalWeight(height)) + " lbs.";
     std::string highWeight = roundedDoubleStr(calculateHighNormalWeight(height)) + " lbs.";
-    // Define a structure for each row of the table
+
     struct Row
     {
         std::string leftColStr;
@@ -69,13 +67,12 @@ void displayBodyMassIndexReport(double height, double weight)
         long unsigned int rightColWid;
     };
 
-    // Calculate the width of the entire table
+    // Calculates width of table
     for (int i = 0; i < sizeof(colWids) / sizeof(colWids[0]); i++)
     {
         tableWid += colWids[i];
     }
 
-    // Initialize an array of row structures
     Row tableRows[] =
     {
         {
@@ -129,7 +126,6 @@ void displayBodyMassIndexReport(double height, double weight)
         }
     };
 
-    // Loop through the array of row structures for table output
     for (int i = 0; i < sizeof(tableRows) / sizeof(tableRows[0]); i++)
     {
         std::cout << std::left
